@@ -1,5 +1,7 @@
 # **Inventory SmartBot**
 
+![Main Page](MainPage.PNG)
+
 ## **Overview**
 
 **Inventory SmartBot** is an AI-driven chatbot designed to streamline inventory management. It allows users to interact with the system using natural language to retrieve data or add new inventory. By interpreting user queries, the chatbot generates and executes SQL queries on the backend database. The system also allows users to upload PDF invoices to automatically extract, validate, and add data into the inventory after confirmation.
@@ -10,17 +12,22 @@
    - Users can ask questions like "What is the current stock of item X?" or "Show me the inventory for product Y."
    - The bot automatically generates SQL queries to fetch the requested data from the inventory database.
 
+   ![Query image](Query1.PNG)
+
 2. **PDF Upload and Data Addition**:
    - Users can upload PDF invoices containing inventory data.
    - The AI extracts the data, converts it into JSON, validates it according to the SQL schema, and presents it for user confirmation before updating the database.
 
-3. **Error Correction and Data Validation**:
+   ![Query image](PDFAI.PNG)
+   ![Query image](PDFAI.PNG)
+
+4. **Error Correction and Data Validation**:
    - If the uploaded data contains errors or deviates from the required format, the bot automatically corrects and formats it based on predefined rules.
 
-4. **SQL Query Generation**:
+5. **SQL Query Generation**:
    - The chatbot automatically translates natural language input into SQL queries, making the interaction seamless and intuitive for non-technical users.
 
-5. **Formatted Responses**:
+6. **Formatted Responses**:
    - The system presents inventory data in a user-friendly, formatted output.
 
 ## **Technology Stack**
@@ -107,7 +114,7 @@ The AI will interpret the query, generate the corresponding SQL query, and retur
 
 ### **Contributing**
 
-We welcome contributions! Feel free to fork the repository and create a pull request with improvements or new features. If you plan to make significant changes, please open an issue first to discuss your ideas.
+I welcome contributions! Feel free to fork the repository and create a pull request with improvements or new features. If you plan to make significant changes, please open an issue first to discuss your ideas.
 
 ---
 

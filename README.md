@@ -19,6 +19,9 @@
    - The AI extracts the data, converts it into JSON, validates it according to the SQL schema, and presents it for user confirmation before updating the database.
 
    ![Query image](PDFAI.PNG)
+
+   **After AI Autofill**
+
    ![Query image](AutoDataExtraction.PNG)
 
 4. **Error Correction and Data Validation**:

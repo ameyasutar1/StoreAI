@@ -1,0 +1,78 @@
+2024-10-01 12:19:17,631 - WARNING -  * Debugger is active!
+2024-10-01 12:19:17,637 - INFO -  * Debugger PIN: 917-097-351
+2024-10-01 12:21:02,555 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-01 12:21:02,555 - INFO - [33mPress CTRL+C to quit[0m
+2024-10-01 12:21:02,574 - INFO -  * Restarting with watchdog (windowsapi)
+2024-10-01 12:21:07,716 - WARNING -  * Debugger is active!
+2024-10-01 12:21:07,723 - INFO -  * Debugger PIN: 917-097-351
+2024-10-01 12:21:07,862 - INFO - 127.0.0.1 - - [01/Oct/2024 12:21:07] "GET /add-data HTTP/1.1" 200 -
+2024-10-01 12:21:07,908 - INFO - 127.0.0.1 - - [01/Oct/2024 12:21:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-10-01 12:21:07,913 - INFO - 127.0.0.1 - - [01/Oct/2024 12:21:07] "[36mGET /static/add_data.css HTTP/1.1[0m" 304 -
+2024-10-01 12:22:02,905 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:02] "GET /add-data HTTP/1.1" 200 -
+2024-10-01 12:22:02,934 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-10-01 12:22:02,941 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:02] "[36mGET /static/add_data.css HTTP/1.1[0m" 304 -
+2024-10-01 12:22:03,498 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:03] "GET /add-data HTTP/1.1" 200 -
+2024-10-01 12:22:03,519 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-10-01 12:22:03,521 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:03] "[36mGET /static/add_data.css HTTP/1.1[0m" 304 -
+2024-10-01 12:22:03,671 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:03] "GET /add-data HTTP/1.1" 200 -
+2024-10-01 12:22:03,687 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-10-01 12:22:03,690 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:03] "[36mGET /static/add_data.css HTTP/1.1[0m" 304 -
+2024-10-01 12:22:03,826 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:03] "GET /add-data HTTP/1.1" 200 -
+2024-10-01 12:22:03,849 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-10-01 12:22:03,852 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:03] "[36mGET /static/add_data.css HTTP/1.1[0m" 304 -
+2024-10-01 12:22:03,974 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:03] "GET /add-data HTTP/1.1" 200 -
+2024-10-01 12:22:03,994 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-10-01 12:22:03,998 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:03] "[36mGET /static/add_data.css HTTP/1.1[0m" 304 -
+2024-10-01 12:22:04,199 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:04] "GET /add-data HTTP/1.1" 200 -
+2024-10-01 12:22:04,219 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-10-01 12:22:04,220 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:04] "[36mGET /static/add_data.css HTTP/1.1[0m" 304 -
+2024-10-01 12:22:05,449 - ERROR - Error invoking LLM: Error code: 503 - {'error': {'message': 'Service Unavailable', 'type': 'internal_server_error'}}
+2024-10-01 12:22:05,449 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:05] "[35m[1mPOST /analyze-pdf HTTP/1.1[0m" 500 -
+2024-10-01 12:22:49,748 - ERROR - Error invoking LLM: Error code: 503 - {'error': {'message': 'Service Unavailable', 'type': 'internal_server_error'}}
+2024-10-01 12:22:49,749 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:49] "[35m[1mPOST /analyze-pdf HTTP/1.1[0m" 500 -
+2024-10-01 12:22:55,553 - ERROR - Error invoking LLM: Error code: 503 - {'error': {'message': 'Service Unavailable', 'type': 'internal_server_error'}}
+2024-10-01 12:22:55,555 - INFO - 127.0.0.1 - - [01/Oct/2024 12:22:55] "[35m[1mPOST /analyze-pdf HTTP/1.1[0m" 500 -
+2024-10-01 12:23:25,726 - INFO -  * Detected change in 'c:\\Users\\AM ECOSYSTEMS\\OneDrive\\Documents\\Chatbot\\Retail AI Store Bot\\retail_SQL_AI\\app.py', reloading
+2024-10-01 12:23:25,727 - INFO -  * Detected change in 'c:\\Users\\AM ECOSYSTEMS\\OneDrive\\Documents\\Chatbot\\Retail AI Store Bot\\retail_SQL_AI\\app.py', reloading
+2024-10-01 12:23:25,728 - INFO -  * Detected change in 'c:\\Users\\AM ECOSYSTEMS\\OneDrive\\Documents\\Chatbot\\Retail AI Store Bot\\retail_SQL_AI\\app.py', reloading
+2024-10-01 12:23:25,728 - INFO -  * Detected change in 'c:\\Users\\AM ECOSYSTEMS\\OneDrive\\Documents\\Chatbot\\Retail AI Store Bot\\retail_SQL_AI\\app.py', reloading
+2024-10-01 12:23:26,794 - INFO -  * Restarting with watchdog (windowsapi)
+2024-10-01 12:23:38,847 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-01 12:23:38,848 - INFO - [33mPress CTRL+C to quit[0m
+2024-10-01 12:23:49,449 - INFO - 127.0.0.1 - - [01/Oct/2024 12:23:49] "GET /static/add_data.css HTTP/1.1" 200 -
+2024-10-01 12:23:49,530 - INFO - 127.0.0.1 - - [01/Oct/2024 12:23:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-10-01 12:24:03,439 - INFO - 127.0.0.1 - - [01/Oct/2024 12:24:03] "GET / HTTP/1.1" 200 -
+2024-10-01 12:24:03,463 - INFO - 127.0.0.1 - - [01/Oct/2024 12:24:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-10-01 12:24:38,205 - INFO - 127.0.0.1 - - [01/Oct/2024 12:24:38] "POST /chat HTTP/1.1" 200 -
+2024-10-01 13:59:34,553 - INFO - 127.0.0.1 - - [01/Oct/2024 13:59:34] "GET /add-data HTTP/1.1" 200 -
+2024-10-01 13:59:34,578 - INFO - 127.0.0.1 - - [01/Oct/2024 13:59:34] "[36mGET /static/add_data.css HTTP/1.1[0m" 304 -
+2024-10-01 13:59:34,589 - INFO - 127.0.0.1 - - [01/Oct/2024 13:59:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-10-01 13:59:49,549 - ERROR - Error extracting JSON objects: unknown extension ?R at position 12
+2024-10-01 13:59:49,549 - INFO - 127.0.0.1 - - [01/Oct/2024 13:59:49] "[35m[1mPOST /analyze-pdf HTTP/1.1[0m" 500 -
+2024-10-01 14:04:23,905 - INFO - 127.0.0.1 - - [01/Oct/2024 14:04:23] "GET /add-data HTTP/1.1" 200 -
+2024-10-01 14:04:23,934 - INFO - 127.0.0.1 - - [01/Oct/2024 14:04:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-10-01 14:04:23,941 - INFO - 127.0.0.1 - - [01/Oct/2024 14:04:23] "[36mGET /static/add_data.css HTTP/1.1[0m" 304 -
+2024-10-01 14:04:46,318 - ERROR - Error extracting JSON objects: unknown extension ?R at position 12
+2024-10-01 14:04:46,318 - INFO - 127.0.0.1 - - [01/Oct/2024 14:04:46] "[35m[1mPOST /analyze-pdf HTTP/1.1[0m" 500 -
+2024-10-01 14:06:31,838 - INFO - 127.0.0.1 - - [01/Oct/2024 14:06:31] "GET /add-data HTTP/1.1" 200 -
+2024-10-01 14:06:31,866 - INFO - 127.0.0.1 - - [01/Oct/2024 14:06:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-10-01 14:06:31,872 - INFO - 127.0.0.1 - - [01/Oct/2024 14:06:31] "[36mGET /static/add_data.css HTTP/1.1[0m" 304 -
+2024-10-01 14:06:38,731 - ERROR - Error extracting JSON objects: unknown extension ?R at position 12
+2024-10-01 14:06:38,732 - INFO - 127.0.0.1 - - [01/Oct/2024 14:06:38] "[35m[1mPOST /analyze-pdf HTTP/1.1[0m" 500 -
+2024-10-01 14:08:58,622 - ERROR - Error extracting JSON objects: unknown extension ?R at position 12
+2024-10-01 14:08:58,623 - INFO - 127.0.0.1 - - [01/Oct/2024 14:08:58] "[35m[1mPOST /analyze-pdf HTTP/1.1[0m" 500 -
+2024-10-01 14:09:43,929 - INFO - 127.0.0.1 - - [01/Oct/2024 14:09:43] "GET /add-data HTTP/1.1" 200 -
+2024-10-01 14:09:43,960 - INFO - 127.0.0.1 - - [01/Oct/2024 14:09:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-10-01 14:09:43,963 - INFO - 127.0.0.1 - - [01/Oct/2024 14:09:43] "[36mGET /static/add_data.css HTTP/1.1[0m" 304 -
+2024-10-01 14:09:50,644 - ERROR - Error extracting JSON objects: unknown extension ?R at position 12
+2024-10-01 14:09:50,645 - INFO - 127.0.0.1 - - [01/Oct/2024 14:09:50] "[35m[1mPOST /analyze-pdf HTTP/1.1[0m" 500 -
+2024-10-01 14:11:10,887 - INFO - 127.0.0.1 - - [01/Oct/2024 14:11:10] "GET /add-data HTTP/1.1" 200 -
+2024-10-01 14:11:10,915 - INFO - 127.0.0.1 - - [01/Oct/2024 14:11:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-10-01 14:11:10,919 - INFO - 127.0.0.1 - - [01/Oct/2024 14:11:10] "[36mGET /static/add_data.css HTTP/1.1[0m" 304 -
+2024-10-01 14:11:18,221 - ERROR - Error extracting JSON objects: unknown extension ?R at position 12
+2024-10-01 14:11:18,222 - INFO - 127.0.0.1 - - [01/Oct/2024 14:11:18] "[35m[1mPOST /analyze-pdf HTTP/1.1[0m" 500 -
+2024-10-01 14:12:40,244 - INFO - 127.0.0.1 - - [01/Oct/2024 14:12:40] "GET /add-data HTTP/1.1" 200 -
+2024-10-01 14:12:40,274 - INFO - 127.0.0.1 - - [01/Oct/2024 14:12:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-10-01 14:12:40,283 - INFO - 127.0.0.1 - - [01/Oct/2024 14:12:40] "[36mGET /static/add_data.css HTTP/1.1[0m" 304 -

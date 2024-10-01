@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Form with PDF Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_data.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-section">
+            <form id="product-form">
+                <button type="button" class="home-button">Home</button>
+                <h1>Product Information</h1>
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" required>
+
+                <label for="color">Color:</label>
+                <input type="text" id="color" name="color" required>
+
+                <label for="size">Size:</label>
+                <input type="text" id="size" name="size" required>
+
+                <label for="stock">Stock Quantity:</label>
+                <input type="number" id="stock" name="stock" required>
+
+                <button type="submit">Submit</button>
+
+                <div id="confirmation-buttons" style="display: none;">
+                    <button type="button" id="confirm-yes">Yes</button>
+                    <button type="button" id="confirm-no">No</button>
+                </div>
+            </form>
+        </div>
+    
+        <div class="pdf-section">
+            <h2>Upload PDF</h2>
+            <input type="file" id="pdf-upload" accept="application/pdf">
+            <div id="pdf-preview">
+                <p>No PDF loaded</p>
+            </div>
+
+            <button id="analyze-pdf" style="display: none;">Analyze with AI</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
+
+        let uploadedFile;
+        let currentProductIndex = 0; // Keep track of the current product index
+        let productsQueue = []; // Array to store the extracted products
+
+        document.getElementById('pdf-upload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            uploadedFile = file;
+
+            const maxFileSize = 10 * 1024 * 1024; // 10MB
+            if (file.size > maxFileSize) {
+                alert('The PDF size must be less than 10MB.');
+                event.target.value = '';
+                return;
+            }
+
+            if (file && file.type === 'application/pdf') {
+                const fileReader = new FileReader();
+                fileReader.onload = function(e) {
+                    const pdfData = e.target.result;
+
+                    const loadingTask = pdfjsLib.getDocument({ data: pdfData });
+                    loadingTask.promise.then(function(pdf) {
+                        if (pdf.numPages > 3) {
+                            alert('The PDF must have 3 pages or fewer.');
+                            event.target.value = '';
+                            return;
+                        }
+
+                        const pdfPreview = document.getElementById('pdf-preview');
+                        pdfPreview.innerHTML = '';
+                        const pdfFrame = document.createElement('iframe');
+                        pdfFrame.src = URL.createObjectURL(file);
+                        pdfFrame.width = '100%';
+                        pdfFrame.height = '500px';
+                        pdfPreview.appendChild(pdfFrame);
+
+                        document.getElementById('analyze-pdf').style.display = 'block';
+                    }).catch(function(error) {
+                        console.error('Error while loading PDF:', error);
+                    });
+                };
+                fileReader.readAsArrayBuffer(file);
+            } else {
+                alert('Please upload a valid PDF file.');
+                event.target.value = '';
+            }
+        });
+
+        document.getElementById('analyze-pdf').addEventListener('click', function() {
+            if (!uploadedFile) {
+                alert('Please upload a PDF before running AI analysis.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('pdf', uploadedFile);
+
+            fetch('/analyze-pdf', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`); // Provide status code in the error
+                }
+                return response.json(); // Parse JSON response
+            })
+            .then(data => {
+                console.log(data); // For debugging: check the response data
+
+                if (data.t_shirts && data.t_shirts.length > 0) {
+                    productsQueue = data.t_shirts; // Store the products in the queue
+                    showProduct(currentProductIndex); // Show the first product
+                } else {
+                    alert('No products found in the PDF.');
+                }
+                
+                alert('PDF analysis complete.');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error analyzing PDF: ' + error.message);
+            });
+        });
+
+        function showProduct(index) {
+            const product = productsQueue[index];
+
+            if (product) {
+                document.getElementById('name').value = product.brand; // Assuming brand is the name
+                document.getElementById('price').value = product.price;
+                document.getElementById('color').value = product.color;
+                document.getElementById('size').value = product.size;
+                document.getElementById('stock').value = product.stock_quantity;
+
+                document.getElementById('confirmation-buttons').style.display = 'block';
+            } else {
+                alert("No more products to add.");
+                document.getElementById('confirmation-buttons').style.display = 'none';
+            }
+        }
+
+        document.getElementById('confirm-yes').addEventListener('click', function() {
+            const productData = {
+                brand: document.getElementById('name').value,
+                price: parseFloat(document.getElementById('price').value),
+                color: document.getElementById('color').value,
+                size: document.getElementById('size').value,
+                stock_quantity: parseInt(document.getElementById('stock').value, 10)
+            };
+
+            fetch('/analyze-pdf', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ action: 'add_product', product: productData })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert('Product added successfully: ' + data.message);
+                currentProductIndex++;
+                showProduct(currentProductIndex);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error adding product: ' + error.message);
+            });
+        });
+
+        document.getElementById('confirm-no').addEventListener('click', function() {
+            alert('Product not added. Moving to the next product.');
+            currentProductIndex++;
+            showProduct(currentProductIndex);
+        });
+
+        // Handle Home button click
+        document.querySelector('.home-button').addEventListener('click', function() {
+            window.location.href = '/'; // Redirect to the home page
+        });
+    </script>
+</body>
+</html>

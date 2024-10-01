@@ -1,0 +1,200 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Container styles */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+    background-image: url("https://images.pexels.com/photos/3735641/pexels-photo-3735641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+}
+
+/* Main content */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+/* Left section */
+.left-section {
+    width: 40%;
+}
+
+/* Button styles */
+.button-group button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    border: none;
+    background-color: #c8c8c8;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-group button:hover {
+    background-color: #a8a8a8;
+}
+
+/* Right section */
+.right-section {
+    width: 55%;
+    padding: 20px;
+    border-left: 1px solid #d0d0d0;
+}
+
+/* Chatbox styling */
+/* Chatbox styling */
+.chat-box {
+    border: 1px solid #c0c0c0;
+    padding: 30px;
+    border-radius: 30px;
+    max-height: 300px; /* Restrict height */
+    overflow-y: auto; /* Enable scrolling */
+    background-color: #f9f9f9;
+}
+
+/* Clear float for chat-box */
+#chat-box::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* Bot message styling (right side, green background) */
+.bot-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 20px;
+    max-width: 80%;
+    text-align: right;
+    word-wrap: break-word;
+    float: right;
+    clear: both; /* Ensure new bot messages clear previous ones */
+}
+
+/* User message styling */
+.user-message {
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 20px;
+    max-width: 80%;
+    text-align: left;
+    word-wrap: break-word;
+    clear: both; /* Clear float to avoid overlap */
+}
+
+/* Form styles for add_data.html */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+button[type="submit"] {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Container for the chat form */
+#chat-form {
+    display: flex;
+    justify-content: center; /* Aligns the form to the center */
+    align-items: center; /* Vertically centers the content inside the form */
+    margin-top: 10px;
+    border: 1px solid #c0c0c0; /* Matches border of chat-box */
+    padding: 20px;
+    border-radius: 50px;
+    background-color: #f9f9f9;
+    max-width: 800px; /* Sets a maximum width for the form */
+    margin-left: auto; /* Centers form horizontally */
+    margin-right: auto;
+}
+
+/* Chat input field */
+#user-input {
+    flex: 1;
+    padding: 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 30px;
+    margin-right: 10px; /* Creates space between input and button */
+    background-color: #fff;
+    width: 100%; /* Ensures input takes available space */
+    box-sizing: border-box; /* Ensures padding doesn't increase the width */
+}
+
+/* Submit button */
+#chat-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green color for the send button */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* Make sure the button adjusts its size based on screen width */
+#chat-form button {
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+.chat-container {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border: 1px solid #c0c0c0;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.chat-header h3 {
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+}

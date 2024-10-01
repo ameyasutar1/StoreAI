@@ -1,0 +1,183 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container to hold both sections */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    gap: 30px;
+}
+
+/* Form section (40% width) */
+.form-section {
+    width: 40%;
+}
+
+.form-section h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+.form-section label {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Input field styling */
+.form-section input {
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.form-section input:focus {
+    border-color: #4CAF50;
+}
+
+/* Button styling */
+.form-section button {
+    margin-top: 25px;
+    padding: 12px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-section button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* PDF section (60% width) */
+.pdf-section {
+    width: 60%;
+    padding-left: 30px;
+}
+
+.pdf-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+/* File input styling */
+.pdf-section input[type="file"] {
+    margin-bottom: 15px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.pdf-section input[type="file"]:hover,
+.pdf-section input[type="file"]:focus {
+    border-color: #4CAF50;
+}
+
+/* Load PDF button */
+.pdf-section button {
+    padding: 12px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 20px;
+}
+
+.pdf-section button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* PDF preview area */
+#pdf-preview {
+    border: 2px solid #ccc;
+    height: 500px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#pdf-preview p {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .form-section,
+    .pdf-section {
+        width: 100%;
+        padding: 0;
+    }
+
+    .pdf-section {
+        margin-top: 30px;
+    }
+}
+
+.product-information {
+    position: relative; /* Establishes a positioning context for the button */
+}
+
+.home-button {
+    background-color: #4CAF50; /* Green color */
+    color: rgb(255, 255, 255); /* White text */
+    border: none; /* Remove border */
+    padding: 100px 30px; /* Add padding */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+    font-size: 16px; /* Font size */
+    
+    position: relative; /* Position relative to .product-information */
+    top: 0px; /* Adjust as needed */
+    right: 0%; /* Adjust as needed */
+    z-index: 1000; /* Ensure it appears above other elements */
+    border-radius: 6px; /* Add border radius for consistency */
+}

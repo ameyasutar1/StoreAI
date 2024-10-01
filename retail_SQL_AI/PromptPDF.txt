@@ -1,0 +1,109 @@
+You are tasked with validating T-shirt and discount data based on the following rules. After processing the input data, return the results in JSON format. NO preamble No Extra talk 
+
+Rules for Validation:
+T-Shirt Data Validation:
+
+Brand: Must be one of the following: Van Heusen, Levi, Nike, Adidas.
+Color: Must be one of the following: Red, Blue, Black, White.
+Size: Must be one of the following: XS, S, M, L, XL.
+Price: Must be a positive integer between 10 and 50 (inclusive).
+Stock Quantity: Must be a non-negative integer (0 or greater).
+Unique Constraints:
+
+Each combination of brand, color, and size must be unique.
+Discount Data Validation:
+
+T-Shirt ID: Must be a positive integer and must already exist in the t_shirts table.
+Discount Percentage: Must be a decimal between 0 and 100 (inclusive).
+General Requirements:
+
+Data Extraction: Extract relevant data from the text (brand, size, color, price, and stock quantity).
+Data Conversion: Ensure all extracted values are converted to the correct data types.
+Whitespace: Trim unnecessary whitespace from inputs.
+Error Handling: Handle errors gracefully, providing feedback if any data is invalid.
+Input:
+Extracted text from a PDF:
+
+Copy code
+XYZ xyz Pune xyx@Xyx.com INVOICE INV0001 DATE Sep 30, 2024 DUE On Receipt BALANCE DUE USD $2,768.00 BILL TO Clothing Store XYZ XYZ Pune Clothingstore@store.com DESCRIPTION RATE QTY AMOUNT 
+Nike T Shirt Medium Sized Red Color $42.00 24 $1,008.00 
+Van Heusen Small Sized White Color T shirts $32.00 10 $320.00 
+Small Sized Adidas Red color T shirts $45.00 32 $1,440.00 
+TOTAL $2,768.00 BALANCE DUE USD $2,768.00 9/30/24, 8:15 PM XYZ - Invoice INV0001 https://app.invoicesimple.com/invoices
+Output Format:
+Return each T-shirt entry as a separate JSON object, structured as follows:
+
+json
+Copy code
+{
+  "brand": "Nike",
+  "color": "Red",
+  "size": "M",
+  "price": 42,
+  "stock_quantity": 24,
+  "discount": 0 // can be 0 if no discount is present
+}
+If multiple T-shirt entries are present, provide each as a valid JSON object without any additional text or preamble.
+
+Example JSON output Template Would be 
+
+Please provide the data in a valid JSON format using the following structure. Ensure the JSON is well-formed with no missing or extra commas, and each field is properly enclosed in double quotes:
+json output shall be like this :- 
+{
+  "t_shirts": [
+    {
+      "brand": "Adidas",
+      "color": "Red",
+      "size": "M",
+      "price": 12,
+      "stock_quantity": 10,
+      "discount": 0
+    },
+    {
+      "brand": "Van Heusen",
+      "color": "White",
+      "size": "S",
+      "price": 31,
+      "stock_quantity": 5,
+      "discount": 0
+    },
+    {
+      "brand": "Nike",
+      "color": "Red",
+      "size": "M",
+      "price": 15,
+      "stock_quantity": 18,
+      "discount": 0
+    }
+  ]
+}
+Please ensure there are no syntax errors and the data structure follows valid JSON format."
+
+Detailed Steps:
+Data Extraction:
+
+Extract each T-shirt's brand, size, color, price, and quantity from the input text.
+Ensure that all data conforms to the validation rules outlined above.
+Data Transformation:
+
+Map descriptive terms in the text (e.g., "Medium Sized" to "M", "Small Sized" to "S").
+Parse prices and quantities into integers for validation.
+Validation:
+
+Validate each entry according to the specified rules:
+Check the brand, color, size, price, and stock quantity for compliance.
+Ensure that each brand, color, and size combination is unique.
+Discount Handling:
+
+Since the input doesn't mention any discounts, the discount field will default to 0 for each T-shirt.
+
+Return each T-shirt entry as a valid JSON object.
+Ensure that any invalid data is handled, and errors are reported if necessary.
+
+Return only JSON nothing else
+Please provide the JSON data in a complete and valid format. Ensure:
+
+Every object in the array is properly separated by a comma.
+There are no missing or extra commas.
+All arrays and objects are closed with the correct brackets } or ].
+Ensure that no field or structure is missing.

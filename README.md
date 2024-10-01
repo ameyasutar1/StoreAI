@@ -19,7 +19,7 @@
    - The AI extracts the data, converts it into JSON, validates it according to the SQL schema, and presents it for user confirmation before updating the database.
 
    ![Query image](PDFAI.PNG)
-   ![Query image](PDFAI.PNG)
+   ![Query image](AutoDataExtraction.PNG)
 
 4. **Error Correction and Data Validation**:
    - If the uploaded data contains errors or deviates from the required format, the bot automatically corrects and formats it based on predefined rules.
